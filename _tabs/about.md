@@ -37,7 +37,7 @@ order: 4
 - JSP/Spring 기반 시스템 개발
 
 **프로젝트 수행**
-<details>
+<details markdown="1">
 <summary>발권 프로세스 간소화 프로젝트 · 2023.04 ~ 2023.10</summary>
 
 - 6단계 발권 프로세스를 4단계로 간소화하여 UX 개선
@@ -47,7 +47,7 @@ order: 4
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>간편 본인인증 모듈 도입 프로젝트 · 2023.09 ~ 2024.01</summary>
 
 - 카카오톡, 토스 본인인증 모듈 도입
@@ -57,7 +57,7 @@ order: 4
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>DB 컬럼 암호화 마이그레이션 프로젝트 · 2024.05 ~ 2024.12</summary>
 
 - Oracle DB 기본 암호화 모듈을 D'amo API 암호화 모듈로 전환
@@ -67,7 +67,7 @@ order: 4
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>e-Voucher 복합 결제 수단 추가 프로젝트 · 2024.12 ~ 2025.06</summary>
 
 - 바우처 전자화에 따른 홈페이지 내 복합 결제 수단 추가

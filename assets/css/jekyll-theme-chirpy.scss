@@ -17,7 +17,6 @@
   transition: scale 0.25s ease, box-shadow 0.25s ease;
 
   &:hover {
-    scale: 1.18;
     animation: avatar-quake 0.18s infinite;
   }
 }
@@ -50,5 +49,5 @@
 
 @media (prefers-reduced-motion: reduce) {
   #avatar { animation: none; }
-  #avatar:hover { animation: none; scale: 1.05; }
+  #avatar:hover { animation: none; }
 }

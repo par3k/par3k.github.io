@@ -1,0 +1,54 @@
+---
+---
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* append your custom style below */
+
+/* 프로필 아바타 흔들림 애니메이션 (panddu 블로그 스타일) */
+#avatar {
+  animation: avatar-tremor 0.45s infinite;
+  will-change: transform;
+  transition: scale 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    scale: 1.18;
+    animation: avatar-quake 0.18s infinite;
+  }
+}
+
+@keyframes avatar-tremor {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  10%      { transform: translate(-1px, -1px) rotate(-0.3deg); }
+  20%      { transform: translate(1px, -1px) rotate(0.3deg); }
+  30%      { transform: translate(-1px, 1px) rotate(-0.2deg); }
+  40%      { transform: translate(1px, 1px) rotate(0.4deg); }
+  50%      { transform: translate(-1px, -1px) rotate(-0.4deg); }
+  60%      { transform: translate(1px, -1px) rotate(0.2deg); }
+  70%      { transform: translate(-1px, 1px) rotate(-0.3deg); }
+  80%      { transform: translate(1px, 1px) rotate(0.3deg); }
+  90%      { transform: translate(-1px, -1px) rotate(-0.2deg); }
+}
+
+@keyframes avatar-quake {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  10%      { transform: translate(-3px, -2px) rotate(-1.2deg); }
+  20%      { transform: translate(3px, -3px) rotate(1.4deg); }
+  30%      { transform: translate(-4px, 2px) rotate(-1.0deg); }
+  40%      { transform: translate(3px, 3px) rotate(1.6deg); }
+  50%      { transform: translate(-3px, -3px) rotate(-1.6deg); }
+  60%      { transform: translate(4px, -2px) rotate(1.0deg); }
+  70%      { transform: translate(-3px, 3px) rotate(-1.4deg); }
+  80%      { transform: translate(3px, 2px) rotate(1.2deg); }
+  90%      { transform: translate(-2px, -3px) rotate(-0.8deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #avatar { animation: none; }
+  #avatar:hover { animation: none; scale: 1.05; }
+}

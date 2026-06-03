@@ -2,7 +2,7 @@
 layout: post
 title: "Jenkins + AWS ALB로 Canary 배포 구현하기"
 date: 2026-03-25
-categories: [DevOps, CI/CD]
+categories: [테크]
 tags: [Jenkins, AWS, ALB, Canary, 배포전략, Spring Boot, EC2]
 ---
 

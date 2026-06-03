@@ -2,7 +2,7 @@
 layout: post
 title: "JWT에서 Redis 서버사이드 세션으로 전환한 이유 — ALB 이중화 환경의 세션 공유와 보안 강화"
 date: 2026-03-29
-categories: [Backend, Security]
+categories: [테크]
 tags: [Spring Boot, JWT, Redis, ElastiCache, Session, Security, AWS, Terraform, OWASP]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Claude AI와 AWS S3로 공짜 모바일 청첩장 만들기"
 date: 2026-02-18 16:16:00 +0900
-categories: [Project]
+categories: [테크]
 tags: [claude-ai, aws, s3, wedding]
 ---
 

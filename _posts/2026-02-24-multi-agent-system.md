@@ -2,7 +2,7 @@
 layout: post
 title: "Claude API로 프로젝트 관리 멀티 에이전트 시스템 만들기"
 date: 2026-02-24
-categories: [AI, Claude]
+categories: [테크]
 tags: [Claude, Anthropic, Multi-Agent, FastAPI, Python, Spring Boot]
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: "Spring Boot KMS 프로젝트 - 보안 강화, AWS 인프라 재구성, CI/CD 전체 과정"
 date: 2026-03-07
-categories: [DevOps, Spring Boot]
+categories: [테크]
 tags: [Spring Boot, AWS, KMS, Terraform, Jenkins, PostgreSQL, JWT, Security, Parameter Store]
 ---
 

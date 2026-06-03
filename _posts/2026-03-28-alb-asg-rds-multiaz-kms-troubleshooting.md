@@ -2,7 +2,7 @@
 layout: post
 title: "AWS ALB + ASG로 EC2 이중화, RDS Multi-AZ, 그리고 KMS 키 교체 후 발생한 암호화 장애 트러블슈팅"
 date: 2026-03-28
-categories: [DevOps, AWS]
+categories: [테크]
 tags: [AWS, ALB, ASG, RDS, MultiAZ, KMS, Terraform, Spring Boot, 이중화, 트러블슈팅]
 ---
 

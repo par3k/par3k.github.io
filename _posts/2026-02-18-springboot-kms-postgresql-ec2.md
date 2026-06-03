@@ -1,7 +1,7 @@
 ---
 title: "Spring Boot + AWS KMS + PostgreSQL RDS로 컬럼 암호화 서비스 구축하기"
 date: 2026-02-18 21:39:00 +0900
-categories: [AWS]
+categories: [테크]
 tags: [aws, spring-boot, kms, postgresql, rds, ec2, nginx, thymeleaf]
 description: Spring Boot 3 + AWS KMS로 DB 컬럼을 암호화하고 EC2 + Nginx + RDS PostgreSQL 환경에 배포하는 과정을 정리했다.
 ---

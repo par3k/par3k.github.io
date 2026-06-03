@@ -2,7 +2,7 @@
 layout: post
 title: "Terraform으로 기존 AWS 인프라를 코드로 관리하기 (IaC)"
 date: 2026-02-23
-categories: [DevOps, Terraform]
+categories: [테크]
 tags: [Terraform, AWS, IaC, EC2, RDS, KMS, IAM, Spring Boot]
 ---
 

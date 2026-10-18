@@ -145,38 +145,6 @@ INFO [api.member] 로그아웃: member_id=2
 
 ---
 
-## 트러블슈팅: `No module named 'psycopg'`
-
-`requirements.txt`에 `psycopg2-binary`를 넣고 `.env`의 `DATABASE_URL`을 `postgresql://...`로 적었는데, 서버를 띄우자마자 이 오류가 났습니다.
-
-```
-File ".../sqlalchemy/dialects/postgresql/psycopg.py", line 497, in import_dbapi
-    import psycopg
-ModuleNotFoundError: No module named 'psycopg'
-```
-
-설치한 것은 `psycopg2`인데 SQLAlchemy가 `psycopg`(v3)를 찾고 있습니다. 원인은 **SQLAlchemy 2.1에서 `postgresql://`만 쓰면 기본 드라이버가 psycopg v3**라는 점입니다. 드라이버를 URL에 명시하면 해결됩니다.
-
-```
-DATABASE_URL=postgresql+psycopg2://...
-```
-
-해결 방법은 둘입니다. URL에 `+psycopg2`를 붙이거나, 아예 `psycopg[binary]`(v3)를 설치하는 것입니다. 이번에는 이미 설치된 psycopg2에 맞춰 URL을 고쳤습니다. 기본 드라이버는 라이브러리 버전에 따라 바뀔 수 있으니, **URL에 드라이버를 명시**해 두는 편이 안전합니다.
-
----
-
-## 테스트: DB도 Redis도 없이 돌린다
-
-테스트는 31개이고, 외부 서비스 없이 실행됩니다.
-
-- DB는 SQLite 인메모리(`StaticPool`)로 바꿔 끼웁니다. FastAPI의 `dependency_overrides`로 `get_db`를 교체합니다.
-- Redis는 `fakeredis`로 교체합니다. `get_redis`를 같은 방식으로 override합니다.
-- 로그 디렉토리는 임시 폴더로 보냅니다. 테스트 때문에 `log/`가 오염되지 않습니다.
-
-의존성 주입 덕분에 라우터 코드는 한 줄도 바꾸지 않고 저장소만 교체할 수 있었습니다. Redis 장애 시 503 동작도 fakeredis에 오류를 주입해서 검증합니다.
-
----
-
 ## 실서버 확인
 
 테스트가 통과해도 실제 PostgreSQL과 Redis에 붙여 본 것은 별개입니다. `curl`로 흐름 전체를 순서대로 호출했습니다.
@@ -204,6 +172,5 @@ DATABASE_URL=postgresql+psycopg2://...
 - JWT의 약점(로그아웃)을 **세션 전환 없이 `jti` + TTL 블랙리스트**로 풀었습니다. 키가 토큰 만료와 함께 사라지므로 저장소가 커지지 않습니다.
 - Redis 장애 시 인증 요청은 안전을 위해 거부(503)하도록 정했습니다.
 - 로깅은 무엇을 남길지보다 **무엇을 남기지 않을지**가 중요했습니다.
-- 드라이버 접두사 하나(`postgresql+psycopg2://`)로 한참 헤맬 수 있다는 것도 다시 확인했습니다.
 
 `get_current_member` 의존성으로 인증을 한곳에 모아 두었기 때문에, 인증이 필요한 API는 이 의존성만 붙이면 됩니다.
